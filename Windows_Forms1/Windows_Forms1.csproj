@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65376C0E-59F2-43A1-9BC8-B34C88F66070}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Windows_Forms1</RootNamespace>
+    <AssemblyName>Windows_Forms1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ACBr.Net.Consulta, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ACBr.Net.Consulta.1.0.1.0\lib\net40\ACBr.Net.Consulta.dll</HintPath>
+    </Reference>
+    <Reference Include="ACBr.Net.Core, Version=1.2.3.3, Culture=neutral, PublicKeyToken=d3bb9130f8b775a6, processorArchitecture=MSIL">
+      <HintPath>..\packages\ACBr.Net.Core.1.2.3.3\lib\net452\ACBr.Net.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Classe_do_Professor">
+      <HintPath>..\..\..\..\..\..\Desktop\Classe_do_Professor.dll</HintPath>
+    </Reference>
+    <Reference Include="Consulta.CNPJ, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Consulta.CNPJ.1.0.1\lib\netstandard2.0\Consulta.CNPJ.dll</HintPath>
+    </Reference>
+    <Reference Include="Correios, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Correios-Api.1.1.1\lib\portable-net45+win\Correios.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.2.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.2\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.1\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Cadastrar_Professor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cadastrar_Professor.Designer.cs">
+      <DependentUpon>Cadastrar_Professor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CEPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CEPForm.Designer.cs">
+      <DependentUpon>CEPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CNPJForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CNPJForm.Designer.cs">
+      <DependentUpon>CNPJForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Componentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Componentes.Designer.cs">
+      <DependentUpon>Componentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CNPJCEP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CNPJCEP.Designer.cs">
+      <DependentUpon>CNPJCEP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dll.Designer.cs">
+      <DependentUpon>Dll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Envia_Parametro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Envia_Parametro.Designer.cs">
+      <DependentUpon>Envia_Parametro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Envia_Parametro_Tabuada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Envia_Parametro_Tabuada.Designer.cs">
+      <DependentUpon>Envia_Parametro_Tabuada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExecutarArquivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExecutarArquivos.Designer.cs">
+      <DependentUpon>ExecutarArquivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCalc.Designer.cs">
+      <DependentUpon>FormCalc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormThread.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormThread.Designer.cs">
+      <DependentUpon>FormThread.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForms.Designer.cs">
+      <DependentUpon>MenuForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Recebe_Parametro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Recebe_Parametro.Designer.cs">
+      <DependentUpon>Recebe_Parametro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Pessoa.cs" />
+    <Compile Include="Forms\Recebe_Parametro_Tabuada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Recebe_Parametro_Tabuada.Designer.cs">
+      <DependentUpon>Recebe_Parametro_Tabuada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WebForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WebForm.Designer.cs">
+      <DependentUpon>WebForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Cadastrar_Professor.resx">
+      <DependentUpon>Cadastrar_Professor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CEPForm.resx">
+      <DependentUpon>CEPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CNPJForm.resx">
+      <DependentUpon>CNPJForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Componentes.resx">
+      <DependentUpon>Componentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CNPJCEP.resx">
+      <DependentUpon>CNPJCEP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dll.resx">
+      <DependentUpon>Dll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Envia_Parametro.resx">
+      <DependentUpon>Envia_Parametro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Envia_Parametro_Tabuada.resx">
+      <DependentUpon>Envia_Parametro_Tabuada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExecutarArquivos.resx">
+      <DependentUpon>ExecutarArquivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCalc.resx">
+      <DependentUpon>FormCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormThread.resx">
+      <DependentUpon>FormThread.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForms.resx">
+      <DependentUpon>MenuForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Recebe_Parametro.resx">
+      <DependentUpon>Recebe_Parametro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Recebe_Parametro_Tabuada.resx">
+      <DependentUpon>Recebe_Parametro_Tabuada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebForm.resx">
+      <DependentUpon>WebForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{53380211-065e-4ad7-97d2-642dc589e096}</Project>
+      <Name>ClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
+</Project>

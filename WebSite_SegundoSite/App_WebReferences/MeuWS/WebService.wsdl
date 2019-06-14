@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="somaNumero">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n2" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="somaNumeroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="somaNumeroResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaNomeCompleto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sobrenome" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaNomeCompletoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaNomeCompletoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="persistirProfessor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idade" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="persistirProfessorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="cadastrarProfessor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idade" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cadastrarProfessorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="buscaProfessores">
+        <s:complexType />
+      </s:element>
+      <s:element name="buscaProfessoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscaProfessoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="alterarProfessor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idade" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="alterarProfessorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deletarProfessor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deletarProfessorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornaPessoa">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornaPessoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPessoaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaListaDePessoas">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornaListaDePessoasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaListaDePessoasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="somaNumeroSoapIn">
+    <wsdl:part name="parameters" element="tns:somaNumero" />
+  </wsdl:message>
+  <wsdl:message name="somaNumeroSoapOut">
+    <wsdl:part name="parameters" element="tns:somaNumeroResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaNomeCompletoSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaNomeCompleto" />
+  </wsdl:message>
+  <wsdl:message name="retornaNomeCompletoSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaNomeCompletoResponse" />
+  </wsdl:message>
+  <wsdl:message name="persistirProfessorSoapIn">
+    <wsdl:part name="parameters" element="tns:persistirProfessor" />
+  </wsdl:message>
+  <wsdl:message name="persistirProfessorSoapOut">
+    <wsdl:part name="parameters" element="tns:persistirProfessorResponse" />
+  </wsdl:message>
+  <wsdl:message name="cadastrarProfessorSoapIn">
+    <wsdl:part name="parameters" element="tns:cadastrarProfessor" />
+  </wsdl:message>
+  <wsdl:message name="cadastrarProfessorSoapOut">
+    <wsdl:part name="parameters" element="tns:cadastrarProfessorResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscaProfessoresSoapIn">
+    <wsdl:part name="parameters" element="tns:buscaProfessores" />
+  </wsdl:message>
+  <wsdl:message name="buscaProfessoresSoapOut">
+    <wsdl:part name="parameters" element="tns:buscaProfessoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="alterarProfessorSoapIn">
+    <wsdl:part name="parameters" element="tns:alterarProfessor" />
+  </wsdl:message>
+  <wsdl:message name="alterarProfessorSoapOut">
+    <wsdl:part name="parameters" element="tns:alterarProfessorResponse" />
+  </wsdl:message>
+  <wsdl:message name="deletarProfessorSoapIn">
+    <wsdl:part name="parameters" element="tns:deletarProfessor" />
+  </wsdl:message>
+  <wsdl:message name="deletarProfessorSoapOut">
+    <wsdl:part name="parameters" element="tns:deletarProfessorResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPessoaSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPessoa" />
+  </wsdl:message>
+  <wsdl:message name="retornaPessoaSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPessoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaListaDePessoasSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaListaDePessoas" />
+  </wsdl:message>
+  <wsdl:message name="retornaListaDePessoasSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaListaDePessoasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="somaNumero">
+      <wsdl:input message="tns:somaNumeroSoapIn" />
+      <wsdl:output message="tns:somaNumeroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaNomeCompleto">
+      <wsdl:input message="tns:retornaNomeCompletoSoapIn" />
+      <wsdl:output message="tns:retornaNomeCompletoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="persistirProfessor">
+      <wsdl:input message="tns:persistirProfessorSoapIn" />
+      <wsdl:output message="tns:persistirProfessorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cadastrarProfessor">
+      <wsdl:input message="tns:cadastrarProfessorSoapIn" />
+      <wsdl:output message="tns:cadastrarProfessorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscaProfessores">
+      <wsdl:input message="tns:buscaProfessoresSoapIn" />
+      <wsdl:output message="tns:buscaProfessoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="alterarProfessor">
+      <wsdl:input message="tns:alterarProfessorSoapIn" />
+      <wsdl:output message="tns:alterarProfessorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deletarProfessor">
+      <wsdl:input message="tns:deletarProfessorSoapIn" />
+      <wsdl:output message="tns:deletarProfessorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPessoa">
+      <wsdl:input message="tns:retornaPessoaSoapIn" />
+      <wsdl:output message="tns:retornaPessoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaListaDePessoas">
+      <wsdl:input message="tns:retornaListaDePessoasSoapIn" />
+      <wsdl:output message="tns:retornaListaDePessoasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="somaNumero">
+      <soap:operation soapAction="http://tempuri.org/somaNumero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaNomeCompleto">
+      <soap:operation soapAction="http://tempuri.org/retornaNomeCompleto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="persistirProfessor">
+      <soap:operation soapAction="http://tempuri.org/persistirProfessor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastrarProfessor">
+      <soap:operation soapAction="http://tempuri.org/cadastrarProfessor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscaProfessores">
+      <soap:operation soapAction="http://tempuri.org/buscaProfessores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="alterarProfessor">
+      <soap:operation soapAction="http://tempuri.org/alterarProfessor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletarProfessor">
+      <soap:operation soapAction="http://tempuri.org/deletarProfessor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPessoa">
+      <soap:operation soapAction="http://tempuri.org/retornaPessoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaListaDePessoas">
+      <soap:operation soapAction="http://tempuri.org/retornaListaDePessoas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="somaNumero">
+      <soap12:operation soapAction="http://tempuri.org/somaNumero" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaNomeCompleto">
+      <soap12:operation soapAction="http://tempuri.org/retornaNomeCompleto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="persistirProfessor">
+      <soap12:operation soapAction="http://tempuri.org/persistirProfessor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastrarProfessor">
+      <soap12:operation soapAction="http://tempuri.org/cadastrarProfessor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscaProfessores">
+      <soap12:operation soapAction="http://tempuri.org/buscaProfessores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="alterarProfessor">
+      <soap12:operation soapAction="http://tempuri.org/alterarProfessor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletarProfessor">
+      <soap12:operation soapAction="http://tempuri.org/deletarProfessor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPessoa">
+      <soap12:operation soapAction="http://tempuri.org/retornaPessoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaListaDePessoas">
+      <soap12:operation soapAction="http://tempuri.org/retornaListaDePessoas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://localhost:51177/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://localhost:51177/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
